@@ -15,13 +15,10 @@ export class DropdownUfComponent implements OnInit {
   @Input() control!: FormControl;
 
   unidadesFederativas: UnidadeFederativa[] = [];
-
   filteredOptions$?: Observable<UnidadeFederativa[]>;
-
 
   constructor(
     private unidadeFederativaService: UnidadeFederativaService) {
-
   }
 
   ngOnInit(): void {
@@ -29,6 +26,7 @@ export class DropdownUfComponent implements OnInit {
       .subscribe(dados => {
         this.unidadesFederativas = dados
       })
+      
     this.filteredOptions$ = this.control.valueChanges.pipe(
       startWith(''),
       map(value => this.filtrarUfs(value))
