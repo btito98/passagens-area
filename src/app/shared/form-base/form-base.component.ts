@@ -30,7 +30,7 @@ export class FormBaseComponent implements OnInit{
       estado: this.estadoControl,
       confirmarEmail: [null, [Validators.required, Validators.email]],
       confirmarSenha: [null, [Validators.required, Validators.minLength(3)]],
-      aceitarTermos: [null, [Validators.required]]
+      aceitarTermos: [null, [Validators.requiredTrue]]
     });
   }
 
