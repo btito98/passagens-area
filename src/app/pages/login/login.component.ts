@@ -36,6 +36,7 @@ export class LoginComponent implements OnInit {
         next: (response) => {
           console.log(response)
           this.router.navigateByUrl('/');
+          this.loginForm.reset();
         },
         error: (error) => {
           console.log(error);
